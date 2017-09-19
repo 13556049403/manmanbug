@@ -146,3 +146,10 @@ function scroll() {
     })
 
 }
+
+
+
+// 点击置顶
+$('.center_to_top').on('click', function() {
+    $('body,html').animate({ scrollTop: 0 }, 500);
+})
