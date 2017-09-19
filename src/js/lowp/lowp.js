@@ -1,6 +1,8 @@
 // 动态渲染导航栏
 var dataArr = [];
 var index = 0;
+var _index = 0;
+
 // var loading_pic = $(".loading_pic")
 // var centerAll = $(".centerAll")
 // 渲染导航栏
@@ -13,37 +15,66 @@ $.ajax({
     })
     //     // 动态渲染商品列表
 $.get('http://139.199.192.48:9090/api/getbaicaijiaproduct', { titleid: 0 }, function(data) {
-    dataArr = data.result;
-    // console.log(data.result);
-    var tempData = dataArr.slice(0, 6);
-    // console.log(tempData)
-    $(".product_list").append(template("shangpin_list", tempData));
-    $('#ul_list').children().eq(0).addClass("ractive");
-    index++;
-
-    // return
-})
-window.onscroll = function() {
-    console.log($('.loading').offset().top - $('body').height())
-        // console.log($('html').scrollTop());
-    if ($('html').scrollTop() > 530 * index && index == 1 * index) {
-        var tempData = dataArr.slice(6 * index, 6 + index * 6);
+        dataArr = data.result;
+        // console.log(data.result);
+        var tempData = dataArr.slice(0, 6);
         // console.log(tempData)
         $(".product_list").append(template("shangpin_list", tempData));
+        $('#ul_list').children().eq(0).addClass("ractive");
         index++;
+        _index = index
 
-        console.log(index + "</br>" + ".....................................................")
+        // return
+    })
+    // var _index = 0;
+window.onscroll = function() {
+    // console.log($('.loading').offset().top - $('body').height())
+    // console.log($('html').scrollTop());
+    setTimeout(function() {
+        if ($('html').scrollTop() > (380 + 450 * (index - 1)) && _index == index) {
+            console.log('.........................sddfhgfgjdjsdgfhfxsgd......................................')
+            var tempData = dataArr.slice(6 * index, 6 + index * 6);
+            // console.log(tempData)
 
-        if (index > 4) {
-            console.log(".................99999999999999999999999999999999.......................")
-                // loading_pic.style.display = ''none'';
-            $(".center_pic").css('display', 'none')
-            $(".centerAll").css('display', 'block')
-
-            // centerAll.style.display = 'block';
+            $(".product_list").append(template("shangpin_list", tempData))
+            console.log("已加载" + (index) + "次")
+            index++;
+            _index = index
+                // console.log(".......................1111111111111111111..............................")
+            console.log(Math.ceil(dataArr.length / 6))
+            if (index > Math.ceil(dataArr.length / 6)) {
+                console.log(".................99999999999.......................")
+                    // loading_pic.style.display = ''none'';
+                $(".center_pic").css('display', 'none')
+                $(".centerAll").css('display', 'block')
+            }
         }
-    }
+    }, 1500);
 };
+
+
+// window.onscroll = function() {
+//     // console.log('------------------------------------------------------------------------')
+//     console.log($('.loading').offset().top - $('body').height())
+//         // console.log($('html').scrollTop());
+//     if ($('html').scrollTop() > 450 * index && index == 1 * index) {
+//         var tempData = dataArr.slice(6 * index, 6 + index * 6);
+//         // console.log(tempData)
+//         $(".product_list").append(template("shangpin_list", tempData));
+//         index++;
+
+//         console.log(index + "2" + ".....................................................")
+
+//         if (index > Math.ceil(dataArr.length / 6) + 1) {
+//             console.log(".................99999999999999999999999999999999.......................")
+//                 // loading_pic.style.display = ''none'';
+//             $(".center_pic").css('display', 'none')
+//             $(".centerAll").css('display', 'block')
+
+//             // centerAll.style.display = 'block';
+//         }
+//     }
+// };
 
 
 $(document).on('click', '#ul_list>li', function() {

@@ -14,24 +14,26 @@ $.ajax({
 
 
 window.onscroll = function() {
-    console.log('.........................sddfhgfgjdjsdgfhfxsgd......................................')
+    // console.log('.........................sddfhgfgjdjsdgfhfxsgd......................................')
     console.log($('.loading').offset().top - $('body').height())
         // console.log($('html').scrollTop());
-    if ($('html').scrollTop() > 530 * index && index == 1 * index) {
-        var tempData = dataArr2.slice(6 * index, 6 + index * 6);
-        // console.log(tempData)
-        $(".product_list").append(template("product_list", tempData))
-        index++;
+    setTimeout(function() {
+        if ($('html').scrollTop() > 530 * index && index == 1 * index) {
+            var tempData = dataArr2.slice(6 * index, 6 + index * 6);
+            // console.log(tempData)
+            $(".product_list").append(template("product_list", tempData))
+            index++;
 
-        console.log(index + "</br>" + ".....................................................")
+            // console.log(index + "</br>" + ".....................................................")
+            console.log(Math.ceil(dataArr2.length / 6))
+            if (index > Math.ceil(dataArr2.length / 6) + 1) {
+                console.log(".................99999999999.......................")
+                    // loading_pic.style.display = ''none'';
+                $(".center_pic").css('display', 'none')
+                $(".centerAll").css('display', 'block')
 
-        if (index > 4) {
-            console.log(".................99999999999999999999999999999999.......................")
-                // loading_pic.style.display = ''none'';
-            $(".center_pic").css('display', 'none')
-            $(".centerAll").css('display', 'block')
-
-            // centerAll.style.display = 'block';
+                // centerAll.style.display = 'block';
+            }
         }
-    }
+    }, 800);
 };
