@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../../less/lowp/lowp.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="top">
+        <a href="" class="top_left">
+            <i class="to_left">&#xe604;</i>
+        </a>
+        <h1>白菜价-淘宝内部券</h1>
+        <a href="" class="top_right">
+            <img src="../../../public/images/APP.png" alt="">
+        </a>
+    </div>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <ul id="ul_list" class="clearfix">
+            <!-- <li class="ractive">全部</li> -->
+        </ul>
+        <div class="nav_right">
+            <i class="nav_search">&#xe60a;</i>
+        </div>
+    </div>
+    <!-- 商品列表 -->
+    <div class="product_list">
+        <!-- 商品列表坑 -->
+    </div>
+    <div class="loading">
+        <div class="top"></div>
+        <div class="center">
+            <div class="center_pic">
+                <img src="../../../public/images/loading.gif" alt="" class="loading_pic">
+            </div>
+            <div class="centerAll">
+                已加载全部
+            </div>
+        </div>
+        <div class="bottom"></div>
+    </div>
+    <div class="shuyu">
+        <span>首页> 白菜价</span>
+    </div>
+    <!-- 底部 -->
+    <div class="bottom clearfix">
+
+        <div class="b_center">
+            <a href="">登录</a>
+            <a href="">注册</a>
+            <div>
+                <i class="to_top">&#xe648;</i> 返回顶部
+            </div>
+        </div>
+        <div class="b_bottom">
+            <p>
+                <a href="">手机APP下载</a>
+                <span>慢慢买手机版</span>
+                <span>--掌上比价平台</span>
+            </p>
+            <p>m.manmanbug.com</p>
+        </div>
+    </div>
+</body>
+
+<!-- 标题模板引擎 -->
+<script id="nav_li" type="text/template">
+    {{each result nav_li i}}
+    <li data-id="{{nav_li.titleId}}">{{nav_li.title}}</li>
+    {{/each}}
+</script>
+
+<!-- 商品列表模板引擎 -->
+<script id="shangpin_list" type="text/template">
+    {{each $data list i}}
+    <div class="shangpin" data-id="{{list.productId}}">
+        <a href="" class="pic">
+           {{@list.productImg}}
+        </a>
+        <div class="presentation">
+            <div class="pname">
+                {{@list.productName}}
+            </div>
+            <div class="price">
+                {{@list.productPrice}}
+            </div>
+            {{@list.productCouponRemain}}
+            <div class="presentation_bottom">
+                {{@list.productCoupon}} {{@list.productHref}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+
+</script>
+<script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../../node_modules/art-template/lib/template-web.js"></script>
+<script src="../../../src/js/common/utils.js"></script>
+<script src="../../js/lowp/lowp.js"></script>
+
+
+</html>

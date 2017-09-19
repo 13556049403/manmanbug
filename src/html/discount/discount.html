@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../../less/discount/discount.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div class="top">
+        <a href="" class="top_left">
+            <i class="to_left">&#xe604;</i>
+        </a>
+        <h1>国内折扣</h1>
+        <a href="" class="top_right">
+            <img src="../../../public/images/APP.png" alt="">
+        </a>
+    </div>
+    <!-- 商品列表 -->
+    <ul class="product_list clearfix">
+        <!-- 列表坑 -->
+    </ul>
+    <div class="loading">
+        <div class="top"></div>
+        <div class="center">
+            <div class="center_pic">
+                <img src="../../../public/images/loading.gif" alt="" class="loading_pic">
+            </div>
+            <div class="centerAll">
+                已加载全部
+            </div>
+        </div>
+        <div class="bottom"></div>
+    </div>
+    <div class="shuyu">
+        <span>首页> 国内折扣</span>
+    </div>
+    <!-- 底部 -->
+    <div class="bottom clearfix">
+
+        <div class="b_center">
+            <a href="">登录</a>
+            <a href="">注册</a>
+            <div>
+                <i class="to_top">&#xe648;</i> 返回顶部
+            </div>
+        </div>
+        <div class="b_bottom">
+            <p>
+                <a href="">手机APP下载</a>
+                <span>慢慢买手机版</span>
+                <span>--掌上比价平台</span>
+            </p>
+            <p>m.manmanbug.com</p>
+        </div>
+    </div>
+</body>
+<script id="product_list" type="text/template">
+    {{each $data list i}}
+    <li>
+        <a href="">
+            <div class="pic">
+                <!-- <img src="{{list.productImg}}" alt=""> -->
+                {{@list.productImg}}
+            </div>
+            <div class="product_name">
+                <span>{{list.productName}}</span>
+            </div>
+            <div class="product_prc">
+                <span>{{list.productPrice}}</span>
+            </div>
+            <div class="product_from">
+                <span>{{list.productFrom}} | {{list.productTime}}</span>
+            </div>
+        </a>
+    </li>
+    {{/each}}
+</script>
+<script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../../node_modules/art-template/lib/template-web.js"></script>
+<script src="../../js/discount/discount.js"></script>
+
+</html>

@@ -1,0 +1,317 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  /* 移动端a标签 点击高亮  */
+}
+img {
+  /* 去除图片默认的3px */
+  display: block;
+  width: 100%;
+}
+input {
+  display: block;
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+ul {
+  list-style: none;
+}
+/* 清除浮动  */
+/*  before  */
+.clearfix::after {
+  display: block;
+  height: 0;
+  content: "";
+  clear: both;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('../../../public/font/iconfont.eot');
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'), url('../../../public/font/iconfont.woff') format('woff'), url('../../../public/font/iconfont.ttf') format('truetype'), url('../../../public/font/iconfont.svg#iconfont') format('svg');
+}
+.top {
+  height: 50px;
+  background-color: orange;
+  position: relative;
+}
+.top .top_left {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+}
+.top .top_left .to_left {
+  font-family: "iconfont" !important;
+  font-size: 18px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 20px;
+}
+.top h1 {
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  line-height: 50px;
+}
+.top .top_right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+}
+.top .top_right img {
+  width: 100%;
+  height: 100%;
+}
+.nav {
+  height: 45px;
+  border-bottom: 2px solid #d3d1d1;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+.nav ul {
+  height: 100%;
+  color: #3a3a3a;
+  padding-bottom: 5px;
+}
+.nav ul li {
+  float: left;
+  height: 100%;
+  padding: 0 8px;
+  font-size: 14px;
+  line-height: 45px;
+}
+.nav ul .ractive {
+  color: #e4393c;
+  border-bottom: 2px solid #e4393c;
+}
+.nav .nav_right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 45px;
+  border-left: 1px solid #d3d1d1;
+  background-color: #fff;
+  color: #3a3a3a;
+  text-align: center;
+}
+.nav .nav_right .nav_search {
+  font-family: "iconfont" !important;
+  font-size: 30px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 45px;
+}
+.product_list .shangpin {
+  border-bottom: 3px solid #d3d1d1;
+  position: relative;
+  padding: 3px;
+  height: 140px;
+}
+.product_list .shangpin .pic {
+  float: left;
+  width: 130px;
+  height: 130px;
+}
+.product_list .shangpin .pic img {
+  width: 100%;
+  height: 100%;
+}
+.product_list .presentation {
+  max-width: 100%;
+  float: left;
+  padding-left: 15px;
+  height: 130px;
+}
+.product_list .presentation .pname {
+  position: absolute;
+  left: 145px;
+  top: 10px;
+  height: 42px;
+  font-size: 14px;
+  line-height: 18px;
+}
+.product_list .presentation .pname span {
+  color: #e4393c;
+}
+.product_list .presentation .price {
+  font-size: 18px;
+  position: absolute;
+  left: 145px;
+  top: 40px;
+}
+.product_list .presentation .price i {
+  font-size: 14px;
+  color: #e4393c;
+}
+.product_list .presentation .price em {
+  font-size: 12px;
+  padding: 0 5px;
+}
+.product_list .presentation .price del {
+  padding-left: 5px;
+  font-size: 12px;
+  color: #3a3a3a;
+}
+.product_list .presentation .bar {
+  height: 30px;
+  position: absolute;
+  left: 145px;
+  top: 74px;
+}
+.product_list .presentation .bar a {
+  display: inline;
+}
+.product_list .presentation .bar i {
+  font-size: 12px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 3px;
+  width: 82px;
+  height: 14px;
+  border: 1px solid #fc353a;
+  background-color: #ffb7b7;
+  color: #e4393c;
+  line-height: 14px;
+  margin-right: 5px;
+}
+.product_list .presentation .bar span {
+  font-size: 12px;
+  color: #e4393c;
+}
+.product_list .presentation .presentation_bottom a:nth-of-type(1) {
+  position: absolute;
+  bottom: 5px;
+  left: 145px;
+  font-size: 14px;
+  color: #e4393c;
+  padding: 5px;
+  line-height: 14px;
+  border: 1px dashed #e4393c;
+}
+.product_list .presentation .presentation_bottom a:nth-of-type(2) {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  float: right;
+  background-color: #e4393c;
+  color: #fff;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 8px;
+  border-radius: 4px;
+}
+.loading {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+}
+.loading .center {
+  height: 30px;
+  width: 100%;
+  background-color: #F1F1F1;
+}
+.loading .center .center_pic {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+}
+.loading .center .center_pic img {
+  height: 100%;
+  width: 100%;
+}
+.loading .center .centerAll {
+  display: none;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #636161;
+  background-color: #F1F1F1;
+}
+.loading .top,
+.loading .bottom {
+  height: 10px;
+  width: 100%;
+  background-color: #E7E7E7 ;
+}
+.shuyu {
+  width: 100%;
+  background-color: #ebebeb;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  height: 36px;
+  font-size: 16px;
+  line-height: 36px;
+  margin: 20px auto;
+}
+.bottom {
+  width: 100%;
+}
+.bottom .b_center {
+  font-size: 16px;
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+}
+.bottom .b_center a {
+  width: 33%;
+  border-right: 1px solid #ccc;
+  float: left;
+}
+.bottom .b_center div {
+  width: 34%;
+  float: left;
+}
+.bottom .b_center div .to_top {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 36px;
+  color: #ccc;
+}
+.bottom .b_bottom {
+  margin: 15px auto;
+  width: 100%;
+  height: 36px;
+  line-height: 20px;
+  font-size: 12px;
+}
+.bottom .b_bottom p {
+  width: 100%;
+  height: 20px;
+  text-align: center;
+  color: #ccc;
+}
+.bottom .b_bottom p a {
+  color: #e4393c;
+  display: inline;
+}
+.bottom .b_bottom p span:nth-of-type(1) {
+  color: #000;
+}
